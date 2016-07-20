@@ -20,13 +20,13 @@ namespace eshopBL
             return brands;
         }
 
-        public List<Brand> GetBrands(string categoryUrl)
+        public List<Brand> GetBrands(string categoryUrl, bool includeChildrenCategories = false)
         {
             CategoryDL categoryDL = new CategoryDL();
             Category category = categoryDL.GetCategoryByUrl(categoryUrl);
 
             BrandDL brandDL = new BrandDL();
-            return category != null ? brandDL.GetBrands(category.CategoryID) : null;
+            return brandDL.GetBrands(category.CategoryID, includeChildrenCategories);
         }
 
         public Brand GetBrandByName(string name)

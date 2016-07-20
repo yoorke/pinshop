@@ -56,20 +56,24 @@ namespace eshopv2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Category category = null;
             if (!Page.IsPostBack)
             {
+                string categoryName = string.Empty;
                 if (!Page.Request.QueryString["category"].Contains("undefined") && !Page.Request.QueryString["category"].Contains("&"))
                 {
-                    string categoryName = string.Empty;
+                    //string categoryName = string.Empty;
                     if (Page.Request.QueryString.ToString().Contains("category"))
                         categoryName = Page.Request.QueryString["category"];
+                    if (new CategoryBL().GetCategoryByUrl(categoryName) == null)
+                        Server.Transfer("/not-found.aspx");
                     ViewState.Add("category", categoryName);
                     loadIntoForm();
                     loadBrands();
                     loadFilter(categoryName);
                     loadPrices();
                     createQueryString(false);
-                    Category category = new CategoryBL().GetCategoryByUrl(categoryName);
+                    category = new CategoryBL().GetCategoryByUrl(categoryName);
                     //ViewState["pageTitle"] = categoryName.Replace(categoryName[0].ToString(), categoryName[0].ToString().ToUpper()) + " | Milupino";
                     ViewState["pageTitle"] = category.Name + " | Pinshop";
                     if (category.Slider != null && category.Slider.SliderID > 0)

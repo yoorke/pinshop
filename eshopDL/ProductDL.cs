@@ -181,9 +181,9 @@ namespace eshopDL
             return GetProducts(-1, string.Empty, string.Empty, attributes, -1, -1, null, null, null, null);
         }
 
-        public List<Product> GetProductsForCategory(int categoryID)
+        public List<Product> GetProductsForCategory(int categoryID, bool isActive, bool isApproved)
         {
-            return GetProducts(-1, string.Empty, string.Empty, null, categoryID, -1, null, null, null, null);
+            return GetProducts(-1, string.Empty, string.Empty, null, categoryID, -1, isApproved,  isActive, null, null);
         }
 
         public List<Product> GetProducts(int categoryID, int supplierID, bool? isApproved, bool? isActive, int? brandID, int? promotionID)
@@ -1190,7 +1190,7 @@ namespace eshopDL
             return (values != string.Empty) ? values.Substring(0, values.Length - 2) : values;
         }
 
-        public double[] GetMinMaxPriceForCategory(int categoryID)
+        public double[] GetMinMaxPriceForCategory(int categoryID, bool includeChildrenCategories = false)
         {
             double[] prices = new double[2];
 

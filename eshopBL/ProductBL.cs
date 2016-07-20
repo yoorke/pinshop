@@ -62,10 +62,10 @@ namespace eshopBL
             return productDL.GetAllProducts();
         }
 
-        public List<Product> GetProductsForCategory(int categoryID)
+        public List<Product> GetProductsForCategory(int categoryID, bool isActive, bool isApproved)
         {
             ProductDL productDL = new ProductDL();
-            return productDL.GetProductsForCategory(categoryID);
+            return productDL.GetProductsForCategory(categoryID, isActive, isApproved);
         }
 
         public int GetProductIDBySupplierCode(string supplierCode)
@@ -162,9 +162,9 @@ namespace eshopBL
             string sort = " brand.name";
             switch (sortName)
             {
-                case "Nazivu": { sort = " brand.name"; break; }
-                case "Ceni opadajuće": { sort = " product.price DESC"; break; }
-                case "Ceni rastuće": { sort = " product.price"; break; }
+                case "name": { sort = " brand.name"; break; }
+                case "priceDesc": { sort = " product.price DESC"; break; }
+                case "priceAsc": { sort = " product.price"; break; }
             }
             return sort;
         }
@@ -217,10 +217,10 @@ namespace eshopBL
             return new ProductDL().GetMinMaxPriceForCategory(categoryID)[1];
         }
 
-        public double[] GetMinMaxPrice(string categoryName)
+        public double[] GetMinMaxPrice(string categoryName, bool includeChildrenCategories = false)
         {
             Category category = new CategoryBL().GetCategory(categoryName);
-            return new ProductDL().GetMinMaxPriceForCategory(category.CategoryID);
+            return new ProductDL().GetMinMaxPriceForCategory(category.CategoryID, includeChildrenCategories);
         }
 
         public DataTable GetLast10()

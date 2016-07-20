@@ -303,5 +303,25 @@ namespace eshopDL
             }
             return categories;
         }
+
+public List<int> GetChildrenCategories(int categoryID)
+        {
+            List<int> categories = new List<int>();
+            using (SqlConnection objConn = new SqlConnection(WebConfigurationManager.ConnectionStrings["eshopConnectionString"].ConnectionString))
+            {
+                using (SqlCommand objComm = new SqlCommand("category_getChildren", objConn))
+                {
+                    objConn.Open();
+                    objComm.CommandType = CommandType.StoredProcedure;
+                    objComm.Parameters.Add("@categoryID", SqlDbType.Int).Value = categoryID;
+                    using (SqlDataReader reader = objComm.ExecuteReader())
+                    {
+                        while (reader.Read())
+                            categories.Add(reader.GetInt32(0));
+                    }
+                }
+            }
+            return categories;
+        }
     }
 }

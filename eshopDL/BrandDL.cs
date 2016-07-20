@@ -33,16 +33,32 @@ namespace eshopDL
             return brands;
         }
 
-        public List<Brand> GetBrands(int categoryID)
+        public List<Brand> GetBrands(int categoryID, bool includeChildrenCategories = false)
         {
             List<Brand> brands = null;
 
             using (SqlConnection objConn = new SqlConnection(WebConfigurationManager.ConnectionStrings["eshopConnectionString"].ConnectionString))
             {
-                using (SqlCommand objComm = new SqlCommand("SELECT brand.brandID, brand.name, COUNT(*) FROM brand INNER JOIN product ON brand.brandID=product.brandID INNER JOIN productCategory ON product.productID=productCategory.productID WHERE categoryID=@categoryID AND product.isActive=1 AND product.isApproved=1 GROUP BY brand.brandID, brand.name ORDER BY brand.name", objConn))
+                using (SqlCommand objComm = new SqlCommand("SELECT brand.brandID, brand.name, COUNT(*) FROM brand INNER JOIN product ON brand.brandID=product.brandID INNER JOIN productCategory ON product.productID=productCategory.productID WHERE ", objConn))
                 {
                     objConn.Open();
+                    List<int> categories = new CategoryDL().GetChildrenCategories(categoryID);
+
+                    objComm.CommandText += " (categoryID=@categoryID";
+
+                    if (includeChildrenCategories)
+                        for (int i = 0; i < categories.Count; i++)
+                            objComm.CommandText += " OR categoryID = @categoryID" + (i + 1);
+
+                    objComm.CommandText += ")";
+
                     objComm.Parameters.Add("@categoryID", SqlDbType.Int).Value = categoryID;
+
+                    if(includeChildrenCategories)
+                        for (int i = 0; i < categories.Count; i++)
+                            objComm.Parameters.Add("@categoryID" + (i + 1), SqlDbType.Int).Value = categories[i];
+
+                    objComm.CommandText += " AND product.isActive=1 AND product.isApproved=1 GROUP BY brand.brandID, brand.name ORDER BY brand.name";
                     using (SqlDataReader reader = objComm.ExecuteReader())
                     {
                         if (reader.HasRows)
