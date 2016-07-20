@@ -28,7 +28,7 @@ namespace eshopv2.user_controls
                 if (!Page.IsPostBack)
                 {
                     loadUser();
-                    
+                    loadIntoForm();
                 }
 
 
@@ -37,6 +37,8 @@ namespace eshopv2.user_controls
                 else
                     pnlLogin.Visible = true;
             }
+            if (!Page.IsPostBack)
+                loadIntoForm();
             LoadCart();
         }
 
@@ -206,7 +208,7 @@ namespace eshopv2.user_controls
         protected void rdbDelivery_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadCart();
-            if (rdbDelivery.SelectedValue == "1")
+            if (rdbDelivery.SelectedValue == "2")
             {
                 showDeliveryInfo.Attributes.Add("style", "display:none");
                 showShop.Attributes.Add("style", "display:block");
@@ -216,6 +218,8 @@ namespace eshopv2.user_controls
                 showDeliveryInfo.Attributes.Add("style", "display:block");
                 showShop.Attributes.Add("style", "display:none");
             }
+
+            loadPaymentItems(int.Parse(rdbUserType.SelectedValue), int.Parse(rdbDelivery.SelectedValue));
         }
 
         protected void btnCoupon_Click(object sender, EventArgs e)
@@ -243,6 +247,64 @@ namespace eshopv2.user_controls
             LoadCart();
             if (CouponApplied != null)
                 CouponApplied(this, null);
+        }
+
+        private void loadIntoForm()
+        {
+            loadPaymentItems(1, 1);
+        }
+
+        private void loadPaymentItems(int userType, int deliveryType)
+        {
+            rdbPayment.Items.Clear();
+
+            if(userType == 1) //private
+            {
+                if(deliveryType == 1) //dostava
+                { 
+                    rdbPayment.Items.Add(new ListItem("Gotovina pri preuzimanju", "1", true));
+                    rdbPayment.Items.Add(new ListItem("Uplatnica", "3"));
+                }
+                else if(deliveryType == 2) //licno
+                {
+                    rdbPayment.Items.Add(new ListItem("Gotovina", "1", true));
+                    rdbPayment.Items.Add(new ListItem("Ček", "2", true));
+                    rdbPayment.Items.Add(new ListItem("Kartica", "5", true));
+                    rdbPayment.Items.Add(new ListItem("Uplatnica", "3", true));
+                }
+            }
+            else if(userType == 2) //company
+            {
+                if(deliveryType == 1)
+                {
+                    rdbPayment.Items.Add(new ListItem("Gotovina pri preuzimanju", "1", true));
+                    rdbPayment.Items.Add(new ListItem("Virmansko plaćanje po predračunu", "4", true));
+                }
+                else if(deliveryType == 2)
+                {
+                    rdbPayment.Items.Add(new ListItem("Gotovina", "1", true));
+                    rdbPayment.Items.Add(new ListItem("Kartica", "5", true));
+                    rdbPayment.Items.Add(new ListItem("Virmansko plaćanje po predračunu", "4", true));
+                }
+            }
+            rdbPayment.Items[0].Selected = true;
+        }
+
+        protected void rdbUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadPaymentItems(int.Parse(rdbUserType.SelectedValue), int.Parse(rdbDelivery.SelectedValue));
+            if (rdbUserType.SelectedValue == "1")
+            { 
+                divCompany.Style.Add("display", "none");
+                txtCompanyName.Text = "fizičko lice";
+                txtPib.Text = "000000000";
+            }
+            else
+            { 
+                divCompany.Style.Add("display", "block");
+                txtCompanyName.Text = string.Empty;
+                txtPib.Text = string.Empty;
+            }
         }
     }
 }

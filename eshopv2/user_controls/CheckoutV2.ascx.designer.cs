@@ -139,6 +139,15 @@ namespace eshopv2.user_controls {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator1;
         
         /// <summary>
+        /// divCompany control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCompany;
+        
+        /// <summary>
         /// txtCompanyName control.
         /// </summary>
         /// <remarks>
@@ -274,15 +283,6 @@ namespace eshopv2.user_controls {
         protected global::System.Web.UI.WebControls.CheckBox chkCreateAccount;
         
         /// <summary>
-        /// rdbPayment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rdbPayment;
-        
-        /// <summary>
         /// rdbDelivery control.
         /// </summary>
         /// <remarks>
@@ -308,6 +308,15 @@ namespace eshopv2.user_controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl showShop;
+        
+        /// <summary>
+        /// rdbPayment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rdbPayment;
         
         /// <summary>
         /// txtCoupon control.

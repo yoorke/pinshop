@@ -1158,6 +1158,14 @@ body
     font-weight:bold;
 }
 
+.checkout .cartView .discount{
+    color:#c23131;
+}
+
+.checkout .cartView .coupon{
+    color:#c23131;
+}
+
 .checkout .panel-heading{
     /*background-color:#73d1f6 !important;*/
 }

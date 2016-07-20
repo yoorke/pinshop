@@ -526,7 +526,7 @@ namespace eshopDL
                     }
                 }
             }
-            return status;
+            return product.ProductID;
         }
 
         private int[] SaveProductAttributes(List<AttributeValue> attributes, int productID)

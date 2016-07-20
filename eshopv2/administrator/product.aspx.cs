@@ -380,7 +380,7 @@ namespace eshopv2.administrator
 
             ProductBL productBL = new ProductBL();
             string productID = productBL.SaveProduct(product).ToString();
-            if (lblProductID.Value == "0")
+            //if (lblProductID.Value == "0")
                 lblProductID.Value = productID;
 
             
