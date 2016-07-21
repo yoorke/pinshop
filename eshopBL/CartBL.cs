@@ -122,5 +122,12 @@ namespace eshopBL
                 }
             }
         }
+
+        public void ClearItems(string cartID)
+        {
+            DataTable products = GetProducts(cartID);
+            for (int i = 0; i < products.Rows.Count; i++)
+                DeleteProductFromCart(int.Parse(products.Rows[i]["productID"].ToString()), cartID);          
+        }
     }
 }

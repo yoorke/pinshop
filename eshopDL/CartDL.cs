@@ -19,12 +19,12 @@ namespace eshopDL
                 {
                     objConn.Open();
                     objComm.CommandType = CommandType.StoredProcedure;
-                    objComm.Parameters.Add("@cartID", SqlDbType.Char, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     objComm.Parameters.Add("@productID", SqlDbType.Int).Value = productID;
                     objComm.Parameters.Add("@quantity", SqlDbType.Float).Value = quantity;
                     objComm.Parameters.Add("@productPrice", SqlDbType.Float).Value = productPrice;
                     objComm.Parameters.Add("@userPrice", SqlDbType.Float).Value = userPrice;
-                    objComm.Parameters.Add("@couponID", SqlDbType.Int).Value = -1;
+                    objComm.Parameters.Add("@couponID", SqlDbType.Int).Value = 1;
 
                     status = objComm.ExecuteNonQuery();
                 }
@@ -41,7 +41,7 @@ namespace eshopDL
                 {
                     objConn.Open();
                     objComm.CommandType = CommandType.StoredProcedure;
-                    objComm.Parameters.Add("@cartID", SqlDbType.Char, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     objComm.Parameters.Add("@productID", SqlDbType.Int).Value = productID;
 
                     status = objComm.ExecuteNonQuery();
@@ -59,7 +59,7 @@ namespace eshopDL
                 {
                     objConn.Open();
                     objComm.CommandType = CommandType.StoredProcedure;
-                    objComm.Parameters.Add("@cartID", SqlDbType.Char, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     using (SqlDataReader reader = objComm.ExecuteReader())
                     {
                         if (reader.HasRows)
@@ -79,7 +79,7 @@ namespace eshopDL
                 {
                     objConn.Open();
                     objComm.CommandType = CommandType.StoredProcedure;
-                    objComm.Parameters.Add("@cartID", SqlDbType.Char, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     count = int.Parse(objComm.ExecuteScalar().ToString());
                 }
             }
@@ -95,7 +95,7 @@ namespace eshopDL
                 {
                     objConn.Open();
                     objComm.CommandType = CommandType.StoredProcedure;
-                    objComm.Parameters.Add("@cartID", SqlDbType.Char, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     objComm.Parameters.Add("@productID", SqlDbType.Int).Value = productID;
                     objComm.Parameters.Add("@quantity", SqlDbType.Float).Value = quantity;
                     objComm.Parameters.Add("@productPrice", SqlDbType.Float).Value = productPrice;
@@ -116,7 +116,7 @@ namespace eshopDL
                 using (SqlCommand objComm = new SqlCommand("getCartDiscount", objConn))
                 {
                     objConn.Open();
-                    objComm.Parameters.Add("@cartID", SqlDbType.NChar, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     objComm.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = objComm.ExecuteReader())
                     {
@@ -136,7 +136,7 @@ namespace eshopDL
                 using (SqlCommand objComm = new SqlCommand("addCartCoupon", objConn))
                 {
                     objConn.Open();
-                    objComm.Parameters.Add("@cartID", SqlDbType.NChar, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     objComm.Parameters.Add("@couponID", SqlDbType.Int).Value = couponID;
                     objComm.CommandType = CommandType.StoredProcedure;
 
@@ -155,7 +155,7 @@ namespace eshopDL
                 using (SqlCommand objComm = new SqlCommand("getCartCoupon", objConn))
                 {
                     objConn.Open();
-                    objComm.Parameters.Add("@cartID", SqlDbType.NChar, 50).Value = cartID;
+                    objComm.Parameters.Add("@cartID", SqlDbType.NVarChar, 50).Value = cartID;
                     objComm.CommandType = CommandType.StoredProcedure;
                     using (SqlDataReader reader = objComm.ExecuteReader())
                     {

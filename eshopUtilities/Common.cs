@@ -214,8 +214,8 @@ namespace eshopUtilities
             mail.Body="Imate novu porudžbinu sa sajta.<br/>Sve porudžbine možete videti na stranici <a href='http://www.pinservis.co.rs/administrator/orders.aspx'>www.pinservis.co.rs/administrator/orders.aspx</a>";
             mail.IsBodyHtml=true;
 
-            //SmtpClient smtp = getSmtp();
-            //smtp.Send(mail);
+            SmtpClient smtp = getSmtp(ConfigurationManager.AppSettings["infoEmail"].ToString(), "infoEmail");
+            smtp.Send(mail);
         }
 
         public static void AddUrlRewrite(string url, string page)

@@ -61,6 +61,8 @@ namespace eshopv2.user_controls
 
                 Common.SendOrderConfirmationMail(txtEmail.Text, txtFirstname.Text + " " + txtLastname.Text, order);
                 Common.SendNewOrderNotification(order.OrderID.ToString(), order);
+                new CartBL().ClearItems(Session["cartID"].ToString());
+                new CartBL().RemoveCoupon(Session["cartID"].ToString());
                 Server.Transfer("/orderSuccessful.aspx");
             }
             catch (BLException ex)
@@ -168,20 +170,20 @@ namespace eshopv2.user_controls
             double delivery = 0;
             double total = 0;
             double saving = 0;
-            int couponID = -1;
+            int couponID = 1;
 
             for(int i=0;i<cart.Rows.Count;i++)
             {
                 cartTotal += double.Parse(cart.Rows[i]["productPrice"].ToString()) * double.Parse(cart.Rows[i]["quantity"].ToString());
                 discount += double.Parse(cart.Rows[i]["userPrice"].ToString()) * double.Parse(cart.Rows[i]["quantity"].ToString());
-                if (int.Parse(cart.Rows[i]["couponID"].ToString()) > 0)
+                if (int.Parse(cart.Rows[i]["couponID"].ToString()) > 1)
                 { 
                     couponID = int.Parse(cart.Rows[i]["couponID"].ToString());
                     
                 }
             }
 
-            if (couponID > 0)
+            if (couponID > 1)
                 lblRemoveCoupon.Visible = true;
             else lblRemoveCoupon.Visible = false;
 

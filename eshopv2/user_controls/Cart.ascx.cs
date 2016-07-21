@@ -104,7 +104,7 @@ namespace eshopv2.user_controls
                     ((LinkButton)e.Row.FindControl("btnRemoveQuantity")).Enabled = false;
                 else ((LinkButton)e.Row.FindControl("btnRemoveQuantity")).Enabled = true;
 
-                if (int.Parse(((Label)e.Row.FindControl("lblCouponID")).Text) > 0)
+                if (int.Parse(((Label)e.Row.FindControl("lblCouponID")).Text) > 1)
                 { 
                     //((HtmlControl)e.Row.FindControl("divCoupon")).Style.Add("display", "block");
                     ((Label)e.Row.FindControl("lblUserPrice")).Attributes["class"] = "couponPrice";

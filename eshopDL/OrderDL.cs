@@ -118,7 +118,7 @@ namespace eshopDL
                                 if (Convert.IsDBNull(reader[16]) == false)
                                     order.Zip = reader.GetString(16);
                                 order.Items = getOrderItems(orderID);
-                                order.Coupon = new Coupon(reader.GetInt32(17), reader.GetString(18), reader.GetDouble(19), string.Empty, reader.GetDateTime(24), reader.GetDateTime(25), new CouponType(reader.GetInt32(30), string.Empty), null);
+                                order.Coupon = new Coupon(reader.GetInt32(17), reader.GetString(18), reader.GetDouble(19), string.Empty, reader.GetDateTime(24), reader.GetDateTime(25), new CouponType(reader.GetInt32(26), string.Empty), null);
                                 order.OrderStatus = new OrderStatus(reader.GetInt32(20), reader.GetString(21));
                                 order.Code = reader.GetString(23);
 
