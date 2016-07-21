@@ -115,7 +115,7 @@ namespace eshopv2
                 loadPrices(categoryUrl, priceFrom, priceTo, category.ParentCategoryID == 1);
 
                 
-                ViewState["pageTitle"] = category.Name + " | Milupino";
+                ViewState["pageTitle"] = category.Name + " | PinShop";
                 ViewState["categoryUrl"] = category.Url;
 
                 
