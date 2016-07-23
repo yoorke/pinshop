@@ -34,8 +34,9 @@ namespace eshopv2
         {
             if (!Page.IsPostBack)
             {
-                string productName = (Page.Request.QueryString.ToString().Contains("productID")) ? Page.Request.QueryString["productID"] : string.Empty;
-
+                //string productName = (Page.Request.QueryString.ToString().Contains("productID")) ? Page.Request.QueryString["productID"] : string.Empty;
+                string productName = (Page.RouteData.Values["product"] != null) ? Page.RouteData.Values["product"].ToString() : string.Empty;
+                
                 if (productName != string.Empty)
                 {
                     StringBuilder sb = new StringBuilder();

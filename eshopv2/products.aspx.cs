@@ -110,7 +110,7 @@ namespace eshopv2
                 category = new CategoryBL().GetCategoryByUrl(categoryUrl);
                 ViewState.Add("category", categoryUrl);
                 loadIntoForm();
-                loadBrands(categoryUrl, brandIDs, category.ParentCategoryID == 1);
+                loadBrands(categoryUrl, brandIDs, false);
                 loadFilter(categoryUrl, attributeIDs);
                 loadPrices(categoryUrl, priceFrom, priceTo, category.ParentCategoryID == 1);
 
