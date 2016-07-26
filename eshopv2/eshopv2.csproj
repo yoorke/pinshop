@@ -94,6 +94,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="account.aspx" />
+    <Content Include="administrator\categoryBanner.aspx" />
+    <Content Include="administrator\categoryBanners.aspx" />
     <Content Include="administrator\coupon.aspx" />
     <Content Include="administrator\coupons.aspx" />
     <Content Include="administrator\css\jquery.datetimepicker.css" />
@@ -107,8 +109,13 @@
     <Content Include="administrator\js\morris.min.js" />
     <Content Include="administrator\js\raphael-min.js" />
     <Content Include="administrator\orders-graph.aspx" />
+    <Content Include="css\mainMenuVertical.css" />
     <Content Include="Default.aspx" />
+    <Content Include="js\jquery.menu-aim.js" />
+    <Content Include="js\jquery.tmpl.min.js" />
+    <Content Include="js\main.js" />
     <Content Include="js\map.js" />
+    <Content Include="js\modernizr.js" />
     <Content Include="js\registration.js" />
     <Content Include="kontakt.aspx" />
     <Content Include="passwordChange.aspx" />
@@ -120,6 +127,8 @@
     <Content Include="promotion.aspx" />
     <Content Include="registration.aspx" />
     <Content Include="search.aspx" />
+    <Content Include="user_controls\CategoryBanner.ascx" />
+    <Content Include="user_controls\MainMenuVertical.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +194,20 @@
     </Compile>
     <Compile Include="administrator\category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\categoryBanner.aspx.cs">
+      <DependentUpon>categoryBanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\categoryBanner.aspx.designer.cs">
+      <DependentUpon>categoryBanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrator\categoryBanners.aspx.cs">
+      <DependentUpon>categoryBanners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrator\categoryBanners.aspx.designer.cs">
+      <DependentUpon>categoryBanners.aspx</DependentUpon>
     </Compile>
     <Compile Include="administrator\coupon.aspx.cs">
       <DependentUpon>coupon.aspx</DependentUpon>
@@ -536,6 +559,13 @@
     <Compile Include="user_controls\Cart.ascx.designer.cs">
       <DependentUpon>Cart.ascx</DependentUpon>
     </Compile>
+    <Compile Include="user_controls\CategoryBanner.ascx.cs">
+      <DependentUpon>CategoryBanner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user_controls\CategoryBanner.ascx.designer.cs">
+      <DependentUpon>CategoryBanner.ascx</DependentUpon>
+    </Compile>
     <Compile Include="user_controls\CheckoutInfo.ascx.cs">
       <DependentUpon>CheckoutInfo.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -563,6 +593,13 @@
     </Compile>
     <Compile Include="user_controls\MainMenu.ascx.designer.cs">
       <DependentUpon>MainMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user_controls\MainMenuVertical.ascx.cs">
+      <DependentUpon>MainMenuVertical.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user_controls\MainMenuVertical.ascx.designer.cs">
+      <DependentUpon>MainMenuVertical.ascx</DependentUpon>
     </Compile>
     <Compile Include="user_controls\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>

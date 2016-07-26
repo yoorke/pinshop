@@ -137,7 +137,9 @@ function AddToCart(lblProductID) {
             $('#cartMessageBox').show();
             var cart = JSON.parse(msg.d);
             $('#ctl00_lblProductCount')[0].innerHTML = cart[0];
-            $('#ctl00_lblCartPrice')[0].innerHTML = cart[1];
+            //$('#ctl00_lblCartPrice')[0].innerHTML = cart[1];
+
+            $('#ctl00_lblProductCount').show();
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert(jqXHR.responseText);
@@ -154,3 +156,9 @@ function cartMessageBoxBtnCart_Click()
 {
     window.location = "/korpa";
 }
+
+$(document).ready(function(){
+    $('[id*=dgvCart] input[type=image]').click(function () {
+        $('#ctl00_lblProductCount')[0].innerText = (parseInt($('#ctl00_lblProductCount')[0].innerText - 1));
+    })
+})

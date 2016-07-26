@@ -63,7 +63,8 @@ namespace eshopv2.user_controls
                 Common.SendNewOrderNotification(order.OrderID.ToString(), order);
                 new CartBL().ClearItems(Session["cartID"].ToString());
                 new CartBL().RemoveCoupon(Session["cartID"].ToString());
-                Server.Transfer("/orderSuccessful.aspx");
+                //Server.Transfer("/orderSuccessful.aspx");
+                Page.Response.Redirect("/porudzbina-uspesna");
             }
             catch (BLException ex)
             {

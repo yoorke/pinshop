@@ -118,6 +118,15 @@ namespace eshopv2
                 ViewState["pageTitle"] = category.Name + " | PinShop";
                 ViewState["categoryUrl"] = category.Url;
 
+                if (category.Slider != null && category.Slider.SliderID > 0)
+                {
+                    slider.SliderID = category.Slider.SliderID;
+                    slider.Visible = true;
+                    slider.loadSlider();
+                }
+                else
+                    slider.Visible = false;
+
                 
 
                 createQueryString();

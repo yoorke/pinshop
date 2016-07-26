@@ -169,6 +169,7 @@ namespace eshopBL
                 category.Url = row["url"].ToString();
                 category.ImageUrl = row["imageUrl"].ToString();
                 category.SortOrder = (int)row["sortOrder"];
+                category.CategoryBannerID = (int)row["categoryBannerID"];
 
 
 

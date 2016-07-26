@@ -11,19 +11,24 @@
         <div class="banner"></div>
     </div>--%>
     <div class="col-lg-12">
-    <div class="row margin-top-2">
-        <div class="col-lg-12">
-            <div id="cart">
-            <cart:Cart ID="cart1" runat="server" />
-                </div>
-            <%--<uc3:CheckoutInfo ID="checkoutInfo1" runat="server" />--%>
-            <div>
-            <uc2:CheckoutV2 ID="checkout1" runat="server" />
-                </div>
-            <%--<uc1:Checkout ID="checkout1" runat="server" />--%>
-        </div>
-    </div><!--row-->
-        </div>
+        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel runat="server">
+            <ContentTemplate>
+                <div class="row margin-top-2">
+                    <div class="col-lg-12">
+                        <div id="cart">
+                            <cart:Cart ID="cart1" runat="server" />
+                        </div>
+                        <%--<uc3:CheckoutInfo ID="checkoutInfo1" runat="server" />--%>
+                        <div>
+                            <uc2:CheckoutV2 ID="checkout1" runat="server" />
+                        </div>
+                        <%--<uc1:Checkout ID="checkout1" runat="server" />--%>
+                    </div>
+                </div><!--row-->
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
     
     <%--<div class="bannerColumn">
         <div class="banner"></div>

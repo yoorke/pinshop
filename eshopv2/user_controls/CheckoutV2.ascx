@@ -54,9 +54,7 @@
         </div><!--login-->
     </asp:Panel>
     <div class="row margin-top-2">
-        <asp:ScriptManager runat="server"></asp:ScriptManager>
-            <asp:UpdatePanel runat="server">
-                <ContentTemplate>
+        
                     <div class="col-lg-7">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -374,8 +372,7 @@
                             </div>
                         </div>
                     </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                
    </div><!--row-->
     <div class="row margin-top-2 margin-bottom-2">
         <div class="col-lg-12">

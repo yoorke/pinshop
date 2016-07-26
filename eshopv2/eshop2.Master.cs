@@ -49,6 +49,8 @@ namespace eshopv2
         {
             CartBL cartBL = new CartBL();
             lblProductCount.Text = cartBL.GetProductsCount(Session["cartID"].ToString()).ToString();
+            if (lblProductCount.Text != "0")
+                lblProductCount.Style.Add("display", "block");
             lblCartPrice.Text = string.Format("{0:N2}", cartBL.GetTotal(Session["cartID"].ToString()));
             base.Render(writer);
 

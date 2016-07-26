@@ -182,13 +182,26 @@ body
 	background-color:#175e87;
 	font-size:17px;
 	padding:5px 5px;
-	text-align:right;
+	text-align:left;
+    cursor:pointer;
 }
 
 #header #cartFP #cartIcon
 {
 	font-size:18px;
 	float:left;
+    margin-right:1em;
+}
+
+#header #cartFP .productCount{
+    position:absolute;
+    top:-0.5em;
+    padding:0.2em 0.7em;
+    background-color:#ff2222;
+    border:2px solid #ffffff;
+    border-radius:5em;
+    right:0;
+    display:none;
 }
 
 #header-bottom
@@ -1207,6 +1220,16 @@ body
 	text-align:center;
 	background:rgba(0,0,0,0.1);
 	z-index:1000;
+    animation: fadein 0.2s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .messageBoxWrapper .messageBox 
@@ -1475,6 +1498,98 @@ a:hover
     color:#c23131;
     font-weight:bold;
     cursor:default;
+}
+
+#cartFPWindow{
+    position:absolute;
+    width:100%;
+    height:auto;
+    border:0;
+    background-color:#ffffff;
+    z-index:1000;
+    box-shadow:2px 2px 10px 0 #444444;
+    top:2em;
+    animation: fadein 0.2s;
+    padding:0.5em;
+    text-align:left;
+    cursor:default;
+    right:0;
+}
+
+@media only screen and (min-width: 1024px){
+    #cartFPWindow{
+        width:180%;
+    }
+}
+
+#cartFPWindow #cartFPClose{
+    position:absolute;
+    top:5px;
+    right:5px;
+    color:#cccccc;
+    cursor:pointer;
+}
+
+#cartFPWindow .cartLinks{
+    position:relative;
+    bottom:0;
+    background-color:#ffffff;
+    margin-top:0;
+}
+
+#cartFPWindow .cartLinks a{
+    background-color:#175e87;
+    padding:0.5em;
+    color:#eeeeee !important;
+    display:inline-block;
+    font-size:0.9em;
+}
+
+#cartFPWindow .cartItems{
+    font-size:0.7em;
+    padding-right:2em;
+    color:#999999;
+}
+
+#cartFPWindow .cartItems .cartHeading{
+    display:block;
+    margin:0.5em;
+    color:#175e87;
+    font-weight:bold;
+    font-size:1.2em;
+    margin-bottom:1em;
+    border-bottom:1px solid #eeeeee;
+}
+
+#cartFPWindow .cartItems table{
+    border-spacing:0.5em;
+    width:100%;
+}
+
+#cartFPWindow .cartItems table td{
+    padding:0.2em 0.5em;
+}
+
+#cartFPWindow #cartInfo{
+    color:#999999;
+    width:100%;
+    display:inline-block;
+    text-align:center;
+}
+
+#cartFPWindow .cartFpTotal{
+    color:#175e87;
+    float:right;
+    font-weight:bold;
+    margin-left:0.5em;
+}
+
+#cartFPWindow .cartTotal{
+    border-top:1px solid #eeeeee;
+    margin:0;
+    padding:1em 0;
+    color:#999999;
+    font-size:0.8em;
 }
 
 table.orderItems {

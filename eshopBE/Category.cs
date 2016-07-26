@@ -23,12 +23,13 @@ namespace eshopBE
         private string _description;
         private bool _active;
         private Slider _slider;
+        private int _categoryBannerID;
 
         public Category()
         {
         }
 
-        public Category(int categoryID, string name, int? parentCategoryID, string url, string imageUrl, int sortOrder, double pricePercent, double webPricePercent, string description, bool active, Slider slider = null)
+        public Category(int categoryID, string name, int? parentCategoryID, string url, string imageUrl, int sortOrder, double pricePercent, double webPricePercent, string description, bool active, int categoryBannerID, Slider slider = null)
         {
             _categoryID = categoryID;
             _name = name;
@@ -41,6 +42,7 @@ namespace eshopBE
             _description = description;
             _active = active;
             _slider = slider;
+            _categoryBannerID = categoryBannerID;
         }
 
         public int CategoryID
@@ -137,6 +139,12 @@ namespace eshopBE
         {
             get { return _slider; }
             set { _slider = value; }
+        }
+
+        public int CategoryBannerID
+        {
+            get { return _categoryBannerID; }
+            set { _categoryBannerID = value; }
         }
     }
 }

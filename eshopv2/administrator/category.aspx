@@ -66,7 +66,10 @@
                                         <label for="cmbSlider">Slider:</label>
                                         <asp:DropDownList ID="cmbSlider" runat="server" CssClass="form-control"></asp:DropDownList>
                                     </div>
-                                    
+                                    <div class="form-group">
+                                        <label for="cmbCategoryBanner">Baner:</label>
+                                        <asp:DropDownList ID="cmbCategoryBanner" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    </div> 
                                 </div><!--form-->
                             </div><!--col-->
                         </div><!--row-->

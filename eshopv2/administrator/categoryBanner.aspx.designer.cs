@@ -7,135 +7,126 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace eshopv2 {
+namespace eshopv2.administrator {
     
     
-    public partial class products {
+    public partial class categoryBanner {
         
         /// <summary>
-        /// canonicalUrl control.
+        /// lblCategoryBannerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal canonicalUrl;
+        protected global::System.Web.UI.WebControls.Literal lblCategoryBannerName;
         
         /// <summary>
-        /// brandLabel control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl brandLabel;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// chkBrands control.
+        /// btnSaveClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chkBrands;
+        protected global::System.Web.UI.WebControls.Button btnSaveClose;
         
         /// <summary>
-        /// cmbPriceFrom control.
+        /// btnClose control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbPriceFrom;
+        protected global::System.Web.UI.WebControls.Button btnClose;
         
         /// <summary>
-        /// cmbPriceTo control.
+        /// csStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbPriceTo;
+        protected global::eshopv2.CustomStatus csStatus;
         
         /// <summary>
-        /// rptFilter control.
+        /// lblCategoryBannerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptFilter;
+        protected global::System.Web.UI.WebControls.HiddenField lblCategoryBannerID;
         
         /// <summary>
-        /// slider control.
+        /// txtCategoryBannerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eshopv2.user_controls.Slider slider;
+        protected global::System.Web.UI.WebControls.TextBox txtCategoryBannerName;
         
         /// <summary>
-        /// pgrPager control.
+        /// requiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eshopv2.user_controls.Pager pgrPager;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator1;
         
         /// <summary>
-        /// cmbPageSize control.
+        /// imgCategoryBanner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbPageSize;
+        protected global::System.Web.UI.WebControls.Image imgCategoryBanner;
         
         /// <summary>
-        /// cmbSort control.
+        /// fluImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbSort;
+        protected global::System.Web.UI.WebControls.FileUpload fluImage;
         
         /// <summary>
-        /// divStatus control.
+        /// btnImageUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divStatus;
+        protected global::System.Web.UI.WebControls.Button btnImageUpload;
         
         /// <summary>
-        /// rptProducts control.
+        /// txtUrl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptProducts;
+        protected global::System.Web.UI.WebControls.TextBox txtUrl;
         
         /// <summary>
-        /// pgrPager1 control.
+        /// requiredFieldValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eshopv2.user_controls.Pager pgrPager1;
-        
-        /// <summary>
-        /// lblPageIndex control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField lblPageIndex;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator2;
     }
 }

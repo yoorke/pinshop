@@ -31,8 +31,8 @@ namespace eshopv2
                 new WishListBL().SaveProductToWishList(int.Parse(Membership.GetUser().ProviderUserKey.ToString()), productID);
             }
             else
-                throw new Exception("Not loggedin");
-                //return "Not loggedin";
+                //throw new Exception("Not loggedin");
+                return "Not loggedin";
             return "rewrer";
         }
 
@@ -125,6 +125,12 @@ namespace eshopv2
         public static string GetCategoryValue(DateTime dateFrom, DateTime dateTo)
         {
             return JsonConvert.SerializeObject(new OrderBL().GetCategoryValue(dateFrom, dateTo));
+        }
+
+        [WebMethod()]
+        public static string GetCart()
+        {
+            return JsonConvert.SerializeObject(new CartBL().GetProducts(HttpContext.Current.Session["cartID"].ToString()));
         }
     }
 }

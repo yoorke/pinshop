@@ -99,6 +99,7 @@
                                 <li><a href="/administrator/sliders.aspx">Slajderi</a></li>
                                 <li><a href="/administrator/banner.aspx">Baneri</a></li>
                                 <li><a href="/administrator/coupons.aspx">Kuponi</a></li>
+                                <li><a href="/administrator/categoryBanners.aspx">Baneri kategorija</a></li>
                             </ul>
                         </li>
                         <li>

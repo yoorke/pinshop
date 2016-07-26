@@ -305,7 +305,7 @@ namespace eshopDL
                                 }
                             }
                             product.Categories = new List<Category>();
-                            product.Categories.Add(new Category(categoryID, reader.GetString(12), -1, string.Empty, string.Empty, 0, 0, 0, string.Empty, true));
+                            product.Categories.Add(new Category(categoryID, reader.GetString(12), -1, string.Empty, string.Empty, 0, 0, 0, string.Empty, true, 0));
                             product.Description = GetProductAttributeValues(product.ProductID, true);
                             products.Add(product);
                         }
@@ -348,7 +348,7 @@ namespace eshopDL
                             product.Promotion.Price = reader.GetDouble(8);
                             product.Promotion.ImageUrl = reader.GetString(9);
                             product.Categories = new List<Category>();
-                            product.Categories.Add(new Category(reader.GetInt32(11), reader.GetString(10), -1, string.Empty, string.Empty, 0, 0, 0, string.Empty, true));
+                            product.Categories.Add(new Category(reader.GetInt32(11), reader.GetString(10), -1, string.Empty, string.Empty, 0, 0, 0, string.Empty, true, 0));
 
                             products.Add(product);
                         }
@@ -398,7 +398,7 @@ namespace eshopDL
                                 }
                             }
                             product.Categories = new List<Category>();
-                            product.Categories.Add(new Category(categoryID, reader.GetString(12), -1, string.Empty, string.Empty, 0, 0, 0, string.Empty, true));
+                            product.Categories.Add(new Category(categoryID, reader.GetString(12), -1, string.Empty, string.Empty, 0, 0, 0, string.Empty, true, 0));
                             product.Description = GetProductAttributeValues(product.ProductID, true);
 
                             products.Add(product);
@@ -985,7 +985,7 @@ namespace eshopDL
                                 categories = new List<Category>();
                             while (reader.Read())
                             {
-                                categories.Add(new Category(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), 0, 0, string.Empty, Convert.IsDBNull(reader[6]) ? false : reader.GetBoolean(6)));
+                                categories.Add(new Category(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetInt32(5), 0, 0, string.Empty, Convert.IsDBNull(reader[6]) ? false : reader.GetBoolean(6), 0));
                             }
                         }
                     }

@@ -65,6 +65,7 @@ namespace eshopv2.administrator
                 category.Description = txtDescription.Text;
                 category.Active = chkActive.Checked;
                 category.Slider = new Slider(int.Parse(cmbSlider.SelectedValue), cmbSlider.SelectedItem.Text, DateTime.Now, DateTime.Now, true);
+                category.CategoryBannerID = cmbCategoryBanner.SelectedIndex > -1 ? int.Parse(cmbCategoryBanner.SelectedValue) : -1;
 
                 CategoryBL categoryBl = new CategoryBL();
                 categoryBl.SaveCategory(category);
@@ -103,6 +104,11 @@ namespace eshopv2.administrator
             cmbSlider.DataTextField = "name";
             cmbSlider.DataValueField = "sliderID";
             cmbSlider.DataBind();
+
+            cmbCategoryBanner.DataSource = new CategoryBannerBL().GetCategoryBanners(true);
+            cmbCategoryBanner.DataValueField = "categoryBannerID";
+            cmbCategoryBanner.DataTextField = "name";
+            cmbCategoryBanner.DataBind();
             
         }
 
@@ -133,6 +139,7 @@ namespace eshopv2.administrator
             {
                 cmbSlider.SelectedValue = category.Slider.SliderID.ToString();
             }
+            cmbCategoryBanner.SelectedValue = category.CategoryBannerID != null ? category.CategoryBannerID.ToString() : "-1";
 
 
             if (lblCategoryID.Value != string.Empty)

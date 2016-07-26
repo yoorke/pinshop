@@ -148,6 +148,15 @@ namespace eshopv2.administrator {
         protected global::System.Web.UI.WebControls.DropDownList cmbSlider;
         
         /// <summary>
+        /// cmbCategoryBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbCategoryBanner;
+        
+        /// <summary>
         /// txtDescription control.
         /// </summary>
         /// <remarks>

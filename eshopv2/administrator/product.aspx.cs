@@ -259,7 +259,7 @@ namespace eshopv2.administrator
 
 
                 //thumb = original.GetThumbnailImage(30, 24, null, IntPtr.Zero);
-                thumb = eshopUtilities.Common.CreateThumb(original, 160, 110);
+                thumb = eshopUtilities.Common.CreateThumb(original, 50, 40);
                 thumb.Save(path + fluImage.FileName.Substring(0, fluImage.FileName.IndexOf(".jpg")) + "-thumb.jpg");
 
                 List<string> images;
@@ -336,7 +336,7 @@ namespace eshopv2.administrator
             if (cmbCategory.SelectedIndex > -1)
             {
                 product.Categories = new List<Category>();
-                product.Categories.Add(new Category(int.Parse(cmbCategory.SelectedValue), cmbCategory.SelectedItem.Text, 0, string.Empty, string.Empty, 0, 0, 0, string.Empty, true));
+                product.Categories.Add(new Category(int.Parse(cmbCategory.SelectedValue), cmbCategory.SelectedItem.Text, 0, string.Empty, string.Empty, 0, 0, 0, string.Empty, true, 0));
                 product.Attributes = new List<AttributeValue>();
 
                 //foreach (object obj in TabContainer1.Controls)

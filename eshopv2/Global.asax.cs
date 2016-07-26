@@ -94,6 +94,7 @@ namespace eshopv2
             routes.MapPageRoute("izmena-sifre", "izmena-sifre", "~/passwordChange.aspx");
             routes.MapPageRoute("pretraga", "pretraga", "~/search.aspx");
             routes.MapPageRoute("uslovi-koriscenja", "uslovi-koriscenja", "~/customPage.aspx", false, new RouteValueDictionary { { "url", "uslovi-koriscenja" } });
+            routes.MapPageRoute("porudzbinaUspesna", "porudzbina-uspesna", "~/orderSuccessful.aspx");
         }
     }
 }

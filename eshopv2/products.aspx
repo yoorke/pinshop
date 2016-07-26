@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/eshop2.Master" AutoEventWireup="true" CodeBehind="products.aspx.cs" Inherits="eshopv2.products" %>
 <%@ Register Src="user_controls/Pager.ascx" TagName="Pager" TagPrefix="pager" %>
 <%@ Register Src="user_controls/product_fp.ascx" TagName="Product_fp" TagPrefix="product_fp" %>
+<%@ Register Src="user_controls/Slider.ascx" TagName="Slider" TagPrefix="slider" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:Literal ID="canonicalUrl" runat="server"></asp:Literal>
+    <link rel="Stylesheet" id="camera-css" href="<%=ResolveUrl("~/css/camera.css") %>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="col-xs-5 col-sm-2 col-md-2 col-lg-2 left-column filter">
@@ -30,6 +32,7 @@
         </asp:Repeater>
     </div>
     <div class="col-xs-7 col-sm-10 col-md-10, col-lg-10 main-content first-page">
+        <slider:Slider ID="slider" runat="server" />
         <div class="row">
             <div class="col-lg-5">
                 <pager:Pager ID="pgrPager" runat="server" OnOnClick="pgrPages_Click" />
@@ -82,6 +85,9 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="server">
+    <script src="<%=ResolveUrl("~/js/jquery.mobile.customized.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/jquery.easing.1.3.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/camera.js") %>"></script>
     <script>
         $(document).ready(function () {
             $('[id*=chkBrands] input').click(function () {
@@ -113,6 +119,11 @@
                 createQueryString();
             })
 
+            if($('#camera_wrap_1').length){
+                jquery_1_7_1('#camera_wrap_1').camera({
+                    thumbnails:true
+                })
+            }
         })
 
         function createQueryString() {

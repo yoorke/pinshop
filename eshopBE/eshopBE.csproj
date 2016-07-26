@@ -60,6 +60,7 @@
     <Compile Include="BannerPosition.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="CategoryBanner.cs" />
     <Compile Include="Coupon.cs" />
     <Compile Include="CouponObject.cs" />
     <Compile Include="CouponType.cs" />
