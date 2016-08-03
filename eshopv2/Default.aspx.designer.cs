@@ -13,22 +13,13 @@ namespace eshopv2 {
     public partial class _Default {
         
         /// <summary>
-        /// banner1 control.
+        /// mainMenuVerticalV2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eshopv2.user_controls.Banner banner1;
-        
-        /// <summary>
-        /// banner2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::eshopv2.user_controls.Banner banner2;
+        protected global::eshopv2.user_controls.MainMenuVerticalV2 mainMenuVerticalV2;
         
         /// <summary>
         /// slider1 control.

@@ -109,6 +109,7 @@
     <Content Include="administrator\js\morris.min.js" />
     <Content Include="administrator\js\raphael-min.js" />
     <Content Include="administrator\orders-graph.aspx" />
+    <Content Include="css\mainMenuVerticalV2.css" />
     <Content Include="css\mainMenuVertical.css" />
     <Content Include="Default.aspx" />
     <Content Include="js\jquery.menu-aim.js" />
@@ -129,6 +130,7 @@
     <Content Include="search.aspx" />
     <Content Include="user_controls\CategoryBanner.ascx" />
     <Content Include="user_controls\MainMenuVertical.ascx" />
+    <Content Include="user_controls\MainMenuVerticalV2.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -600,6 +602,13 @@
     </Compile>
     <Compile Include="user_controls\MainMenuVertical.ascx.designer.cs">
       <DependentUpon>MainMenuVertical.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user_controls\MainMenuVerticalV2.ascx.cs">
+      <DependentUpon>MainMenuVerticalV2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user_controls\MainMenuVerticalV2.ascx.designer.cs">
+      <DependentUpon>MainMenuVerticalV2.ascx</DependentUpon>
     </Compile>
     <Compile Include="user_controls\Pager.ascx.cs">
       <DependentUpon>Pager.ascx</DependentUpon>

@@ -2,6 +2,7 @@
 <%@ Register Src="user_controls/product_slider.ascx" TagName="ProductSlider" TagPrefix="ps" %>
 <%@ Register Src="user_controls/Banner.ascx" TagName="Banner" TagPrefix="banner" %>
 <%@ Register Src="user_controls/Slider.ascx" TagName="Slider" TagPrefix="slider" %>
+<%@ Register Src="user_controls/MainMenuVerticalV2.ascx" TagName="mainMenuVerticalV2" TagPrefix="mainMenuVerticalV2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="Stylesheet" id="camera-css" href="<%=ResolveUrl("~/css/camera.css") %>" type="text/css" />
@@ -15,19 +16,26 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--<div class="container-fluid">-->
-        <div class="col-xs-2 left-column visible-lg visible-md">
+        <%--<div class="col-xs-2 left-column visible-lg visible-md">
             <banner:Banner ID="banner1" runat="server" Position="FP1" />
             <banner:Banner ID="banner2" runat="server" Position="FP2" />
             
             <div class="fb-page" data-href="https://www.facebook.com/pinservis?fref=ts" data-width="180" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pinservis?fref=ts"><a href="https://www.facebook.com/pinservis?fref=ts">Pin Servis</a></blockquote></div></div>
             
-        </div><!--col-banner-->
+        </div><!--col-banner-->--%>
         
         <!--MAIN CONTENT-->
-        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 main-content first-page">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-content first-page">
             
             <!--SLIDER-->
-            <slider:Slider ID="slider1" runat="server" SliderID="12" />
+            <div class="row">
+                <div class="col-md-3 padding-left-0 padding-right-0 mainMenuVertical">
+                    <mainMenuVerticalV2:mainMenuVerticalV2 runat="server" ID="mainMenuVerticalV2"></mainMenuVerticalV2:mainMenuVerticalV2>
+                </div>
+                <div class="col-md-9">
+                    <slider:Slider ID="slider1" runat="server" SliderID="12" />
+                </div>
+            </div>
             <!--<div class="row slider">
                 <div class="col-xs-12 padding-left-0 padding-right-0">
                     <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">

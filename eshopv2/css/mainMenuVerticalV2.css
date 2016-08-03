@@ -217,6 +217,13 @@ header {
   -moz-transition: -moz-transform 0.5s 0s, visibility 0s 0.5s;
   transition: transform 0.5s 0s, visibility 0s 0.5s;
 }
+
+@media only screen and (min-width: 1024px){
+    .cd-dropdown{
+        position:relative;
+    }
+}
+
 .cd-dropdown h2 {
   /* dropdown title - mobile version only */
   position: relative;
@@ -289,7 +296,7 @@ header {
 }
 @media only screen and (min-width: 1024px) {
   .cd-dropdown {
-    position: absolute;
+    /*position: absolute;*/
     top: calc(100% - 2px);
     /* reset style*/
     height: auto;
@@ -432,8 +439,8 @@ header {
   }
   .cd-dropdown-content a, .cd-dropdown-content ul a {
     color: #4f4f4f;
-    height: 40px;
-    line-height: 50px;
+    height: 30px;
+    line-height: 30px;
     font-size: 1.5rem;
     border-color: #ebebeb;
   }
@@ -541,9 +548,9 @@ header {
 @media only screen and (min-width: 1024px) {
   .cd-dropdown-content {
     /* reset mobile style */
-    position: static;
+    position: relative;
     height: auto;
-    width: 255px;
+    width: auto;
     padding:0;
     margin:0;
     background-color:#f4f4f4;
@@ -642,14 +649,14 @@ header {
     width: calc(100% - 60px);
   }
   .cd-dropdown-content .cd-dropdown-icons > li, .cd-dropdown-content .cd-secondary-dropdown > li {
-    width: 35%;
+    width: 36%;
     float: left;
   }
   .cd-dropdown-content .cd-secondary-dropdown {
     overflow: hidden;
-    width: 730px;
+    width: 750px;
     padding-bottom: 0px;
-    min-height:400px;
+    min-height:302px;
     list-style-type:none;
   }
   .cd-dropdown-content .cd-secondary-dropdown::before {
@@ -683,7 +690,7 @@ header {
     transform: translateX(0);
   }
   .cd-dropdown-content .cd-secondary-dropdown > li {
-    margin: 20px 0;
+    margin: 10px 0;
     border:0;
     border-right-width: 0px;
     border-color: #ebebeb;
@@ -786,7 +793,7 @@ header {
 
 .cd-dropdown-content .cd-secondary-dropdown li img.menu-img {
     height:50px;
-    margin-right:10px;
+    margin-right:0px;
 }
 
   .cd-dropdown-content .cd-dropdown-gallery {
@@ -843,6 +850,7 @@ header {
   .cd-dropdown-content > .has-children > ul {
     visibility: hidden;
     background:radial-gradient(farthest-side at 100% 100%, #b5e6f1 0%, #ffffff 100%);
+    padding-bottom:2em;
   }
   .cd-dropdown-content > .has-children > ul.is-active {
     /* when hover over .cd-dropdown-content items - show subnavigation */

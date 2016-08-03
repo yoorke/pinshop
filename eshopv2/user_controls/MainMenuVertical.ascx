@@ -3,7 +3,7 @@
 <%@ Register Src="~/user_controls/CategoryBanner.ascx" TagName="CategoryBanner" TagPrefix="categoryBanner" %>
 
     <div class="cd-dropdown-wrapper">
-        <a class="cd-dropdown-trigger" href="#">Proizvodi</a>
+        <a class="cd-dropdown-trigger" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span> Proizvodi</a>
         <nav class="cd-dropdown">
             <h2>Proizvodi</h2>
             <a href="#" class="cd-close">Close</a>
@@ -53,8 +53,8 @@
                                             
                                     </li>
                                     <li class="bottom">
-                                        <%--<div class="bottomExtraMenu">
-                                            <asp:Repeater ID="rptExtraMenus" runat="server" DataSource='<%#((eshopBE.Category)((RepeaterItem)(Container.NamingContainer.NamingContainer)).DataItem).CategoryExtraMenus %>'>
+                                        <div class="bottomExtraMenu">
+                                            <%-- %><asp:Repeater ID="rptExtraMenus" runat="server" DataSource='<%#((eshopBE.Category)((RepeaterItem)(Container.NamingContainer.NamingContainer)).DataItem).CategoryExtraMenus %>'>
                                                 <ItemTemplate>
                                                     <asp:Label ID="lblExtraMenuName" runat="server" Text='<%#Eval("name") + ":" %>' CssClass="categoryExtraMenuName"></asp:Label>
                                                     <asp:Repeater ID="lblBrands" runat="server" DataSource='<%#Eval("brands") %>'>
@@ -67,8 +67,8 @@
                                                     </asp:Repeater>
                                                 </ItemTemplate>
                                             </asp:Repeater>
-                                            <%--<%#((eshopBE.Category)((RepeaterItem)(Container.NamingContainer.NamingContainer)).DataItem).CategoryExtraMenus.Count.ToString() %>
-                                        </div>--%>
+                                            <%--<%#((eshopBE.Category)((RepeaterItem)(Container.NamingContainer.NamingContainer)).DataItem).CategoryExtraMenus.Count.ToString() %>--%>
+                                        </div>
                                     </li>
                                     </ul>
                                     

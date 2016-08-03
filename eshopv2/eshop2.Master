@@ -15,7 +15,7 @@
     <link href="<%#ResolveUrl("~/css/bootstrap.min.css") %>" rel="stylesheet" />
     <link href="<%#ResolveUrl("~/css/styleV2.css")  %>" rel="stylesheet" type="text/css" />
     <link href="<%#ResolveUrl("~/css/font-awesome.min.css") %>" rel="stylesheet" type="text/css" />
-    <link href="<%#ResolveUrl("~/css/mainMenuVertical.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%#ResolveUrl("~/css/mainMenuVerticalV2.css") %>" rel="stylesheet" type="text/css" />
     
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -190,7 +190,7 @@
         <div class="container padding-left-0">
             <div class="row">
                 <div class="col-lg-12">
-                    <mainMenuVertical:mainMenuVertical ID="mainMenuVertical" runat="server" />
+                    <%--<mainMenuVertical:mainMenuVertical ID="mainMenuVertical" runat="server" />--%>
                 </div>
             </div>
         </div>
@@ -454,6 +454,14 @@
                 event.preventDefault();
                 return false;
             })
+
+            if ($(window).width() >= 1024) {
+                $('.cd-dropdown').addClass('dropdown-is-active');
+                $('.cd-dropdown-trigger').hide();
+            }
+            else if ($(window).width() < 1024) {
+                $('.cd-dropdown-trigger').show();
+            }
         })
 
         $(document).click(function () {
