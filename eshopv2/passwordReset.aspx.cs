@@ -13,6 +13,7 @@ namespace eshopv2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.FindControl("mainMenuVertical").Visible = true;
             if (!Page.IsPostBack)
             {
                 if (Page.Request.QueryString.ToString().Contains("id"))

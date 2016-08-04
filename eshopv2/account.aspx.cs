@@ -15,6 +15,7 @@ namespace eshopv2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.FindControl("mainMenuVertical").Visible = true;
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~/login.aspx?returnUrl=" + Page.Request.RawUrl);
 

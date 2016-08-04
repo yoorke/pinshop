@@ -18,6 +18,7 @@ namespace eshopv2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.FindControl("mainMenuVertical").Visible = true;
             ((TextBox)login1.FindControl("UserName")).Focus();
 
             string returnUrl = Request.QueryString.ToString().Contains("returnUrl") ? Request.QueryString["returnUrl"] : string.Empty;

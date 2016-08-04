@@ -17,7 +17,7 @@ namespace eshopv2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Master.FindControl("mainMenuVertical").Visible = true;
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)

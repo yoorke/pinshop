@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!--<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>-->
     <link rel="stylesheet" type="text/css" media="all" href="/css/jquery.lightbox-0.5.css" />
+    <link rel="stylesheet" href="<%=ResolveUrl("~/css/mainMenuVertical.css") %>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--BANNER-->

@@ -6,6 +6,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="Stylesheet" id="camera-css" href="<%=ResolveUrl("~/css/camera.css") %>" type="text/css" />
+    <link href="<%#ResolveUrl("~/css/mainMenuVerticalV2.css") %>" rel="stylesheet" type="text/css" />
     <%--<style>
         .camera_wrap .camera_pag .camera_pag_ul li {
             display:none !important;
@@ -74,6 +75,20 @@
             </div><!--row-slider-->
             
             <!--PRODUCT SLIDER-->
+            <div class="row banners">
+                <div class="col-md-4 padding-left-0 padding-right-0">
+                    <banner:Banner ID="bannerFP1" runat="server" Position="FP1" />
+                </div>
+                <div class="col-md-4 padding-left-0 padding-right-0">
+                    <banner:Banner ID="bannerFP2" runat="server" Position="FP2" />
+                </div>
+                <div class="col-md-4 padding-left-0 padding-right-0">
+                    <banner:Banner ID="bannerFP3" runat="server" Position="FP3" />
+                </div>
+                <div class="col-md-12 padding-left-0 padding-right-0">
+                    <banner:Banner ID="bannerFP4" runat="server" Position="FP4" />
+                </div>
+            </div>
             <div class="row product_slider">
             <div class="col-lg-12">
             <asp:Repeater ID="rptPromotions" runat="server" OnItemDataBound="rptPromotions_ItemDataBound">
@@ -112,7 +127,17 @@
             </div><!--col-->
             </div><!--product-slider-->
                     
-                
+            <div class="row banners">
+                <div class="col-md-4 padding-left-0 padding-right-0">
+                    <banner:Banner ID="bannerFP5" runat="server" Position="FP1" />
+                </div>
+                <div class="col-md-4 padding-left-0 padding-right-0">
+                    <banner:Banner ID="banenrFP6" runat="server" Position="FP2" />
+                </div>
+                <div class="col-md-4 padding-left-0 padding-right-0">
+                    <banner:Banner ID="bannerFP7" runat="server" Position="FP3" />
+                </div>
+            </div>
         </div><!--col-main-->
     <!--</div>--><!--container-->
     
@@ -136,4 +161,15 @@
             });
         });
 	</script>
+    <script>
+        $(document).ready(function () {
+            if ($(window).width() >= 1024) {
+                $('.cd-dropdown').addClass('dropdown-is-active');
+                $('.cd-dropdown-trigger').hide();
+            }
+            else if ($(window).width() < 1024) {
+                $('.cd-dropdown-trigger').show();
+            }
+        })
+    </script>
 </asp:Content>

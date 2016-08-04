@@ -19,6 +19,7 @@ namespace eshopv2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.FindControl("mainMenuVertical").Visible = true;
             if (new CartBL().GetProductsCount(Session["cartID"].ToString()) > 0)
             {
                 if (!Page.IsPostBack)

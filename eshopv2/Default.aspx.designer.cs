@@ -31,6 +31,42 @@ namespace eshopv2 {
         protected global::eshopv2.user_controls.Slider slider1;
         
         /// <summary>
+        /// bannerFP1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerFP1;
+        
+        /// <summary>
+        /// bannerFP2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerFP2;
+        
+        /// <summary>
+        /// bannerFP3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerFP3;
+        
+        /// <summary>
+        /// bannerFP4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerFP4;
+        
+        /// <summary>
         /// rptPromotions control.
         /// </summary>
         /// <remarks>
@@ -47,5 +83,32 @@ namespace eshopv2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptCategories;
+        
+        /// <summary>
+        /// bannerFP5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerFP5;
+        
+        /// <summary>
+        /// banenrFP6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner banenrFP6;
+        
+        /// <summary>
+        /// bannerFP7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerFP7;
     }
 }

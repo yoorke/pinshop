@@ -5,6 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:Literal ID="canonicalUrl" runat="server"></asp:Literal>
     <link rel="Stylesheet" id="camera-css" href="<%=ResolveUrl("~/css/camera.css") %>" />
+    <link rel="stylesheet" href="<%=ResolveUrl("~/css/mainMenuVertical.css") %>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="col-xs-5 col-sm-2 col-md-2 col-lg-2 left-column filter">

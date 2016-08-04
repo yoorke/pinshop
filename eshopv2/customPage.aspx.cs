@@ -19,6 +19,7 @@ namespace eshopv2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.FindControl("mainMenuVertical").Visible = true;
             if (!Page.IsPostBack)
             {
                 string url=string.Empty;
