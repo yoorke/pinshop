@@ -54,6 +54,7 @@ namespace eshopv2.administrator
             Page.Title = promotion.Name;
             ViewState["pageTitle"] = promotion.Name;
             txtUrl.Text = promotion.Url;
+            chkShowOnMenu.Checked = promotion.ShowOnMenu;
         }
 
         private void savePromotion()
@@ -70,13 +71,13 @@ namespace eshopv2.administrator
                 if (lblPromotionID.Value != string.Empty)
                     promotion.PromotionID = int.Parse(lblPromotionID.Value);
                 promotion.Url = txtUrl.Text;
-                int promotionID = promotion.PromotionID;
+                promotion.ShowOnMenu = chkShowOnMenu.Checked;
 
                 PromotionBL promotionBL = new PromotionBL();
                 promotionBL.SavePromotion(promotion);
 
-                if (promotionID == 0)
-                    Common.AddUrlRewrite(promotion.Url, "promotion.aspx");
+                //if (promotionID == 0)
+                    //Common.AddUrlRewrite(promotion.Url, "promotion.aspx");
             }
             catch (BLException ex)
             {

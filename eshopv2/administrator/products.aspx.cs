@@ -109,12 +109,12 @@ namespace eshopv2.administrator
             cmbBrand.DataValueField = "brandID";
             cmbBrand.DataBind();
 
-            cmbPromotions.DataSource = new PromotionBL().GetPromotions(true, null);
+            cmbPromotions.DataSource = new PromotionBL().GetPromotions(true, null, null);
             cmbPromotions.DataTextField = "name";
             cmbPromotions.DataValueField = "promotionID";
             cmbPromotions.DataBind();
 
-            cmbPromotion.DataSource = new PromotionBL().GetPromotions(true, null);
+            cmbPromotion.DataSource = new PromotionBL().GetPromotions(true, null, null);
             cmbPromotion.DataTextField = "name";
             cmbPromotion.DataValueField = "promotionID";
             cmbPromotion.DataBind();

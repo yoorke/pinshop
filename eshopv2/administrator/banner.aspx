@@ -17,7 +17,7 @@
                 </div><!--btn-group-->
             </div><!--col-->
         </div><!--row-->
-        <div class="row">
+        <div class="row margin-top-2">
             <div class="col-lg-5 col-md-5 col-sm-10 col-xs-12">
                 <div role="form">
                     <div class="form-group">
@@ -56,7 +56,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Link">
                             <ItemTemplate>
-                                <asp:Label ID="lblLink" runat="server" Text='<%#Eval("url") %>'></asp:Label>
+                                <asp:TextBox ID="txtLink" runat="server" Text='<%#Eval("url") %>'></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:CommandField ShowDeleteButton="true" DeleteImageUrl="~/images/delete_icon.png" ButtonType="Image" ControlStyle-Width="20px" />

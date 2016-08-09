@@ -21,8 +21,10 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li id="secondLi" runat="server">
-                                <asp:Image ID="imgCategory" runat="server" ImageUrl='<%# ResolveUrl("~" + Eval("imageUrl")) %>' CssClass="menu-img" Visible='<%#Eval("imageUrl").ToString() != string.Empty %>' />
-                                <asp:HyperLink ID="lnkSubMenu" runat="server" NavigateUrl='<%# ResolveUrl("~" + Eval("url")) %>' Text='<%#Eval("name") %>'>'></asp:HyperLink>
+                                <asp:HyperLink ID="lnkSubMenu" runat="server" NavigateUrl='<%# ResolveUrl("~" + Eval("url")) %>'>
+                                    <asp:Image ID="imgCategory" runat="server" ImageUrl='<%# ResolveUrl("~" + Eval("imageUrl")) %>' CssClass="menu-img" Visible='<%#Eval("imageUrl").ToString() != string.Empty %>' />
+                                    <asp:Label ID="lblName" runat="server" Text='<%#Eval("name") %>'></asp:Label>
+                                </asp:HyperLink>
                                         
                                 <asp:Repeater ID="rptSubMenu3" runat="server" DataSource='<%#Eval("SubCategory") %>'>
                                     <ItemTemplate>

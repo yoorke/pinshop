@@ -76,16 +76,16 @@
             
             <!--PRODUCT SLIDER-->
             <div class="row banners">
-                <div class="col-md-4 padding-left-0 padding-right-0">
+                <div class="col-md-4 padding-left-0 padding-right-0 bannerFP fp1">
                     <banner:Banner ID="bannerFP1" runat="server" Position="FP1" />
                 </div>
-                <div class="col-md-4 padding-left-0 padding-right-0">
+                <div class="col-md-4 bannerFP fp2">
                     <banner:Banner ID="bannerFP2" runat="server" Position="FP2" />
                 </div>
-                <div class="col-md-4 padding-left-0 padding-right-0">
+                <div class="col-md-4 padding-left-0 padding-right-0 bannerFP fp3">
                     <banner:Banner ID="bannerFP3" runat="server" Position="FP3" />
                 </div>
-                <div class="col-md-12 padding-left-0 padding-right-0">
+                <div class="col-md-12 padding-left-0 padding-right-0 bannerFP fp4">
                     <banner:Banner ID="bannerFP4" runat="server" Position="FP4" />
                 </div>
             </div>
@@ -128,13 +128,13 @@
             </div><!--product-slider-->
                     
             <div class="row banners">
-                <div class="col-md-4 padding-left-0 padding-right-0">
+                <div class="col-md-4 padding-left-0 padding-right-0 bannerFP fp1">
                     <banner:Banner ID="bannerFP5" runat="server" Position="FP1" />
                 </div>
-                <div class="col-md-4 padding-left-0 padding-right-0">
+                <div class="col-md-4 bannerFP fp2">
                     <banner:Banner ID="banenrFP6" runat="server" Position="FP2" />
                 </div>
-                <div class="col-md-4 padding-left-0 padding-right-0">
+                <div class="col-md-4 padding-left-0 padding-right-0 bannerFP fp3">
                     <banner:Banner ID="bannerFP7" runat="server" Position="FP3" />
                 </div>
             </div>

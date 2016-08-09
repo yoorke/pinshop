@@ -23,8 +23,10 @@ namespace eshopv2
             if (!Page.IsPostBack)
             {
                 string url=string.Empty;
-                if (Page.Request.QueryString.ToString().Contains("url"))
-                    url = Page.Request.QueryString["url"].Remove(0,1);
+                //if (Page.Request.QueryString.ToString().Contains("url"))
+                //url = Page.Request.QueryString["url"].Remove(0,1);
+                if (Page.RouteData.Values["url"] != null)
+                    url = Page.RouteData.Values["url"].ToString();
                 if (url != string.Empty)
                     loadCustomPage(url);
             }

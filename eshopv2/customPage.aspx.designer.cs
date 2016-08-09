@@ -13,24 +13,6 @@ namespace eshopv2 {
     public partial class customPage {
         
         /// <summary>
-        /// banner1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::eshopv2.user_controls.Banner banner1;
-        
-        /// <summary>
-        /// banner2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::eshopv2.user_controls.Banner banner2;
-        
-        /// <summary>
         /// lblHeading control.
         /// </summary>
         /// <remarks>
@@ -47,5 +29,32 @@ namespace eshopv2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divContent;
+        
+        /// <summary>
+        /// bannerCP1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerCP1;
+        
+        /// <summary>
+        /// bannerCP2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerCP2;
+        
+        /// <summary>
+        /// bannerCP3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner bannerCP3;
     }
 }

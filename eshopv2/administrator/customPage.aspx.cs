@@ -81,8 +81,9 @@ namespace eshopv2.administrator
                 CustomPageBL customPageBL = new CustomPageBL();
                 customPage.CustomPageID = customPageBL.Save(customPage);
 
-                if (customPageID == 0)
-                    Common.AddUrlRewrite(customPage.Url, "customPage.aspx");
+                //if (customPageID == 0)
+                    //Common.AddUrlRewrite(customPage.Url, "customPage.aspx");
+                    
 
                 lblTitleHeading.Text = customPage.Heading;
                 ViewState.Add("customPageID", customPage.CustomPageID);

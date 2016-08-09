@@ -20,6 +20,7 @@ namespace eshopv2
         {
             loadFooter();
             Page.Header.DataBind();
+            loadMenuPromotions();
 
             if (HttpContext.Current.User.Identity.IsAuthenticated)
                 ((Label)loginView1.FindControl("lblUsername")).Text = Membership.GetUser().UserName;
@@ -78,6 +79,12 @@ namespace eshopv2
                 compareBoxText.InnerText = "Uporedi (" + ((System.Collections.Generic.List<int>)HttpContext.Current.Session["compare"]).Count.ToString() + ")";
             }
 
+        }
+
+        private void loadMenuPromotions()
+        {
+            rptPromotions.DataSource = new PromotionBL().GetPromotions(false, null, true);
+            rptPromotions.DataBind();
         }
     }
 }

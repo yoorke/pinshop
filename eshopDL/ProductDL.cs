@@ -154,7 +154,7 @@ namespace eshopDL
                                 product.IsLocked = reader.GetBoolean(11);
                                 product.IsInStock = reader.GetBoolean(12);
                                 product.Images = GetProductImages(product.ProductID);
-                                product.Promotion = new Promotion(-1, string.Empty, 0, string.Empty, reader.GetDouble(13), false, DateTime.Now, DateTime.Now, string.Empty);
+                                product.Promotion = new Promotion(-1, string.Empty, 0, string.Empty, reader.GetDouble(13), false, DateTime.Now, DateTime.Now, string.Empty, false);
 
                                 products.Add(product);
                             }
@@ -1306,9 +1306,20 @@ namespace eshopDL
             {
                 using (SqlCommand objComm = new SqlCommand("product_search", objConn))
                 {
+                    DataTable searchTable = new DataTable();
+                    searchTable.Columns.Add("search");
+                    DataRow newRow;
+                    foreach (string searchItem in search.Split(' '))
+                    { 
+                        newRow = searchTable.NewRow();
+                        newRow["search"] = searchItem;
+                        searchTable.Rows.Add(newRow);
+                    }
+
                     objConn.Open();
                     objComm.CommandType = CommandType.StoredProcedure;
-                    objComm.Parameters.Add("@search", SqlDbType.NVarChar, 50).Value = search;
+                    //objComm.Parameters.Add("@search", SqlDbType.NVarChar, 50).Value = search;
+                    objComm.Parameters.AddWithValue("@search", searchTable);
                     using(SqlDataReader reader = objComm.ExecuteReader())
                     {
                         while (reader.Read())
@@ -1323,12 +1334,13 @@ namespace eshopDL
                             product.Brand = new Brand(reader.GetInt32(6), reader.GetString(7));
                             product.Images = new List<string>();
                             string directory = createImageUrl(reader.GetString(8));
-                            if (System.IO.File.Exists(HttpContext.Current.Server.MapPath("~" + directory)))
-                            {
-                                product.Images.Add(directory);
-                            }
-                            else
-                                product.Images.Add("/images/no-image.jpg");
+                            //if (System.IO.File.Exists(HttpContext.Current.Server.MapPath("~" + directory)))
+                            //{
+                            //product.Images.Add(directory);
+                            //}
+                            //else
+                            //product.Images.Add("/images/no-image.jpg");
+                            product.Images = GetProductImages(product.ProductID);
                             if (!Convert.IsDBNull(reader[9]))
                             {
                                 if (reader.GetDateTime(11) < DateTime.UtcNow && reader.GetDateTime(12) > DateTime.UtcNow)

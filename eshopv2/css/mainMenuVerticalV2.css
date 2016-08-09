@@ -723,6 +723,7 @@ header {
   }
   .no-touch .cd-dropdown-content .cd-secondary-dropdown a:hover {
     color:#175e87 !important;
+    text-decoration:none;
   }
   .cd-dropdown-content .cd-secondary-dropdown ul {
     padding-bottom: 0px;

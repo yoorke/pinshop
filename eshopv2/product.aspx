@@ -8,13 +8,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!--BANNER-->
-    <div class="col-xs-2 left-column visible-lg visible-md">
+    <%--<div class="col-xs-2 left-column visible-lg visible-md">
         <banner:Banner ID="banner1" runat="server" Position="FP1" />
         <banner:Banner ID="banner2" runat="server" Position="FP2" />
-    </div><!--col-banner-->
+    </div><!--col-banner-->--%>
             
     <!--MAIN CONTENT-->
-    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 main-content product-content">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-content product-content">
         <!--images, name, price-->
         <div class="row">
             <div class="col-sm-5">

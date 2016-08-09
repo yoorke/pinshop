@@ -357,10 +357,12 @@ header {
   border-top-width: 1px;
   border-color: #eeeeee;
   border-style: none;
+  text-transform:none;
 }
 
 .cd-dropdown-content a:hover, .cd-dropdown-content ul a:hover{
     color:#e31c24;
+    text-decoration:none;
 }
 .cd-dropdown-content li:first-of-type > a, .cd-dropdown-content ul li:first-of-type > a {
   border-top-width: 0;

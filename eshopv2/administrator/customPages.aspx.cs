@@ -47,7 +47,7 @@ namespace eshopv2.administrator
                 CustomPage customPage = new CustomPageBL().GetCustomPage(int.Parse(e.CommandArgument.ToString()));
                 new CustomPageBL().Delete(int.Parse(e.CommandArgument.ToString()));
                 
-                Common.RemoveUrlRewrite(customPage.Url);
+                //Common.RemoveUrlRewrite(customPage.Url);
                 loadCustomPages();
             }
             

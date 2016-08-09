@@ -540,6 +540,7 @@
     <Compile Include="registration.aspx.designer.cs">
       <DependentUpon>registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Routes.cs" />
     <Compile Include="search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

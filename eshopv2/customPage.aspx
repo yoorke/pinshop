@@ -4,13 +4,28 @@
     <link rel="stylesheet" href="<%=ResolveUrl("~/css/mainMenuVertical.css") %>" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="col-xs-2 left-column visible-lg visible-md">
+    <%--<div class="col-xs-2 left-column visible-lg visible-md">
         <banner:Banner ID="banner1" runat="server" Position="FP1" />
         <banner:Banner ID="banner2" runat="server" Position="FP2" />        
-    </div>
-    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" id="customPage">
-        <h1 class="heading"><asp:Literal ID="lblHeading" runat="server"></asp:Literal></h1>
+    </div>--%>
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="customPage">
+                <h1 class="heading"><asp:Literal ID="lblHeading" runat="server"></asp:Literal></h1>
         
-        <div id="divContent" runat="server"></div>
+                <div id="divContent" runat="server"></div>
+            </div>
+        </div>
+        <div class="row banners">
+            <div class="col-md-4 padding-left-0 padding-right-0 bannerFP fp1">
+                <banner:Banner id="bannerCP1" runat="server" Position="CP1" />
+            </div>
+            <div class="col-md-4 bannerFP fp2">
+                <banner:Banner ID="bannerCP2" runat="server" Position="CP2" />
+            </div>
+            <div class="col-md-4 padding-left-0 padding-right-0 bannerFP fp3">
+                <banner:Banner ID="bannerCP3" runat="server" Position="CP3" />
+            </div>
+        </div>
     </div>
 </asp:Content>

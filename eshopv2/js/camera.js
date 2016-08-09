@@ -45,7 +45,7 @@
 		
 		loaderStroke		: 7,	//the thickness both of the pie loader and of the bar loader. Remember: for the pie, the loader thickness must be less than a half of the pie diameter
 				
-		minHeight			: '200px',	//you can also leave it blank
+		minHeight			: '',	//you can also leave it blank
 		
 		navigation			: false,	//true or false, to display or not the navigation buttons
 		

@@ -7,7 +7,7 @@
             AutoGenerateColumns="false" OnRowDataBound="dgvCart_RowDataBound" OnRowCommand="dgvCart_RowCommand" DataKeyNames="productID"
             OnRowDeleting="dgvCart_RowDeleting">
                 <Columns>
-                    <asp:TemplateField HeaderText="Rb" ControlStyle-Width="20px">
+                    <asp:TemplateField HeaderText="Rb">
                         <ItemTemplate>
                             <asp:Label ID="lblRowIndex" runat="server"></asp:Label>
                         </ItemTemplate>
@@ -22,12 +22,12 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:HyperLink ID="lnkImage" runat="server" NavigateUrl='<%# "/proizvodi/" + eshopBE.Product.CreateFriendlyUrl(Eval("categoryName") + "/" + Eval("brandName") + " " + Eval("name") + "-" + Eval("productID")) %>'>
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%#"/images/" + Eval("imageUrl").ToString().Substring(0, Eval("imageUrl").ToString().IndexOf(".jpg")) + "-list.jpg" %>' />
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%#"/images/" + Eval("imageUrl").ToString().Substring(0, Eval("imageUrl").ToString().IndexOf(".jpg")) + "-list.jpg" %>' CssClass="img-responsive" />
                             </asp:HyperLink>
                         </ItemTemplate>
                     </asp:TemplateField>
             
-                    <asp:TemplateField HeaderText="Naziv" ControlStyle-Width="390px">
+                    <asp:TemplateField HeaderText="Naziv">
                         <ItemTemplate>
                             <asp:HyperLink ID="lnkProduct" runat="server" NavigateUrl='<%# "/proizvodi/" + eshopBE.Product.CreateFriendlyUrl(Eval("categoryName") + "/" + Eval("brandName") + " " + Eval("name") + "-" + Eval("productID")) %>'>
                             <asp:Label ID="lblBrand" runat="server" Text='<%#Eval("brandName") + " " + Eval("name")%>'></asp:Label>
@@ -47,7 +47,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
             
-                    <asp:TemplateField HeaderText="Vaša cena" ControlStyle-Width="70px" ItemStyle-HorizontalAlign="Right">
+                    <asp:TemplateField HeaderText="Vaša cena" ItemStyle-HorizontalAlign="Right">
                         <ItemTemplate>
                             <asp:Label ID="lblUserPrice" runat="server" Text='<%#String.Format("{0:N2}", double.Parse(Eval("userPrice").ToString())) %>'></asp:Label>
                             <div class="coupon-wrapper" id="divCoupon" runat="server" style="display:none">
@@ -56,18 +56,26 @@
                         </ItemTemplate>
                     </asp:TemplateField>
             
-                    <asp:TemplateField HeaderText="Količina">
+                    <asp:TemplateField ItemStyle-CssClass="padding-right-0 text-center">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnRemoveQuantity" runat="server" CommandName="RemoveQuantity" ToolTip="Smanji količinu za 1" CausesValidation="false"><span aria-hidden="true" class="glyphicon glyphicon-minus icon"></span></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Količina" ItemStyle-CssClass="padding-left-0 padding-right-0 quantityInput">
                         <ItemTemplate>
                             <asp:Panel ID="pnlQuantity" runat="server">
-                                <asp:LinkButton ID="btnRemoveQuantity" runat="server" CommandName="RemoveQuantity" ToolTip="Smanji količinu za 1" CausesValidation="false"><span aria-hidden="true" class="glyphicon glyphicon-minus icon"></span></asp:LinkButton>
-                                <asp:TextBox ID="txtQuantity" runat="server" Text='<%#Eval("quantity") %>' Width="50px" CssClass="text-center"></asp:TextBox>
+                                <asp:TextBox ID="txtQuantity" runat="server" Text='<%#Eval("quantity") %>' CssClass="text-center"></asp:TextBox>
                                 <%--<asp:LinkButton ID="btnUpdateQuantity" runat="server" Text="Ažuriraj" CommandName="UpdateQuantity"></asp:LinkButton>--%>
-                                <asp:LinkButton ID="btnAddQuantity" runat="server" CommandName="AddQuantity" ToolTip="Povećaj količinu za 1" CausesValidation="false"><span aria-hidden="true" class="glyphicon glyphicon-plus icon"></span></asp:LinkButton>
                             </asp:Panel>
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField ItemStyle-CssClass="padding-left-0 text-center">
+                        <ItemTemplate>
+                            <asp:LinkButton ID="btnAddQuantity" runat="server" CommandName="AddQuantity" ToolTip="Povećaj količinu za 1" CausesValidation="false"><span aria-hidden="true" class="glyphicon glyphicon-plus icon"></span></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
             
-                    <asp:TemplateField HeaderText="Iznos" ControlStyle-Width="70px" ItemStyle-HorizontalAlign="Right">
+                    <asp:TemplateField HeaderText="Iznos" ItemStyle-HorizontalAlign="Right">
                         <ItemTemplate>
                             <asp:Label ID="lblSum" runat="server" Text='<%#String.Format("{0:N2}", double.Parse(Eval("total").ToString())) %>'></asp:Label>
                         </ItemTemplate>
@@ -79,7 +87,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
             
-                    <asp:CommandField ShowDeleteButton="true" ControlStyle-Width="16px" ButtonType="Image" DeleteImageUrl="/images/close.png" />
+                    <asp:CommandField ShowDeleteButton="true" ButtonType="Image" DeleteImageUrl="/images/close.png" ControlStyle-CssClass="img-responsive deleteIcon" />
                 </Columns>    
             </asp:GridView>
     </div><!--col-->
