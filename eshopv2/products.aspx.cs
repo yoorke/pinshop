@@ -194,19 +194,24 @@ namespace eshopv2
 
         private void loadPrices(string categoryUrl, string priceFrom, string priceTo, bool includeChildrenCategories)
         {
-            cmbPriceFrom.Items.Add("-");
-            cmbPriceTo.Items.Add("-");
+            cmbPriceFrom.Items.Add("0,00");
+            //cmbPriceTo.Items.Add("-");
 
             double[] prices = new ProductBL().GetMinMaxPrice(categoryUrl, includeChildrenCategories);
-            for (int i = (int)prices[0]; i < (int)prices[1]; i += (int)(prices[1] - prices[0]) / 10)
+            
+            int priceSpan = (prices[1] - prices[0]) < 10000 ? 1000 : (prices[1] - prices[0] < 100000 ? 10000 : (prices[1] - prices[0] < 500000 ? 30000 : 50000));
+            for (int i = priceSpan; i <= (int)prices[1]; i += priceSpan)
             {
                 cmbPriceFrom.Items.Add(string.Format("{0:N2}", i));
                 cmbPriceTo.Items.Add(string.Format("{0:N2}", i));
             }
+            cmbPriceTo.Items.Add(string.Format("{0:N2}", prices[1]));
             if (priceFrom != string.Empty)
                 cmbPriceFrom.SelectedValue = priceFrom;
             if (priceTo != string.Empty)
                 cmbPriceTo.SelectedValue = priceTo;
+            else
+                cmbPriceTo.SelectedValue = cmbPriceTo.Items[cmbPriceTo.Items.Count - 1].Value;
         }
 
         protected void chkBrands_SelectedIndexChanged(object sender, EventArgs e)

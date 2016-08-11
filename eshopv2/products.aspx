@@ -39,12 +39,12 @@
                 <pager:Pager ID="pgrPager" runat="server" OnOnClick="pgrPages_Click" />
             </div>
             <div class="col-lg-7">
-                <div class="row sort pull-right">
+                <div class="row sort">
                     <div class="col-sm-6 col-xs-12">
                         <div role="form" class="form-horizontal">
                             <div class="form-group">
-                                <label for="cmbPageSize" class="col-xs-8">Prikaži po stranici:</label>
-                                <div class="col-xs-4">
+                                <label for="cmbPageSize" class="col-xs-8 padding-left-0">Prikaži po stranici:</label>
+                                <div class="col-xs-4 padding-left-0">
                                     <asp:DropDownList ID="cmbPageSize" runat="server" OnSelectedIndexChanged="cmbPageSize_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
                                 </div>
                             </div>
@@ -53,8 +53,8 @@
                     <div class="col-sm-6 col-xs-12">
                         <div role="form" class="form-horizontal">
                             <div class="form-group">
-                                <label for="cmbSort" class="col-xs-5">Sortiraj po:</label>
-                                <div class="col-xs-7">
+                                <label for="cmbSort" class="col-xs-5 padding-left-0">Sortiraj po:</label>
+                                <div class="col-xs-7 padding-left-0">
                                     <asp:DropDownList ID="cmbSort" runat="server" OnSelectedIndexChanged="cmbSort_SelectedIndexChanged" CssClass="pull-right form-control"></asp:DropDownList>
                                 </div>
                             </div>
