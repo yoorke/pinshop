@@ -1320,6 +1320,7 @@ namespace eshopDL
                     objComm.CommandType = CommandType.StoredProcedure;
                     //objComm.Parameters.Add("@search", SqlDbType.NVarChar, 50).Value = search;
                     objComm.Parameters.AddWithValue("@search", searchTable);
+                    objComm.Parameters[0].SqlDbType = SqlDbType.Structured;
                     using(SqlDataReader reader = objComm.ExecuteReader())
                     {
                         while (reader.Read())

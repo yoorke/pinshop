@@ -24,4 +24,36 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderFooter" runat="server">
+    <script>
+        
+        $(document).ready(function () {
+            $.expr[':'].Contains = $.expr.createPseudo(function (arg) {
+                return function (elem) {
+                    return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+                }
+            })
+
+            var searchedText = decodeURIComponent(getQueryString()['a']).split(' ');
+            $(searchedText).each(function(p, text){
+                $('.product_fp h3 span:Contains(' + text + '), .product_fp h4 a:Contains(' + text + ')').each(function (i, element) {
+                    var content = $(element).text();
+                    //content = content.replace(text, '<span class="search_found">' + text + '</span>');
+                    var regex = new RegExp('(' + text + ')', 'gi');
+                    content = content.replace(regex, '<span class="search_found">$1</span>');
+                    element.innerHTML = content;
+                })
+            })
+        })
+
+        function getQueryString() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+    </script>
 </asp:Content>
