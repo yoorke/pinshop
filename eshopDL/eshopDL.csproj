@@ -153,10 +153,6 @@
       <Project>{a34bb306-9c16-4dae-be9d-4672b7343435}</Project>
       <Name>eshopBE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\eshopUtilities\eshopUtilities.csproj">
-      <Project>{046a463c-401e-437a-aed0-deb506886c0c}</Project>
-      <Name>eshopUtilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

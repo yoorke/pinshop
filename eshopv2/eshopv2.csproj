@@ -65,6 +65,18 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Web, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="eshopBE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WebShopFramework\eshopBE\bin\Debug\eshopBE.dll</HintPath>
+    </Reference>
+    <Reference Include="eshopBL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WebShopFramework\eshopBL\bin\Debug\eshopBL.dll</HintPath>
+    </Reference>
+    <Reference Include="eshopUtilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WebShopFramework\eshopUtilities\bin\Debug\eshopUtilities.dll</HintPath>
+    </Reference>
     <Reference Include="Intelligencia.UrlRewriter, Version=1.7.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\eshop\eshop\eshop\bin\Intelligencia.UrlRewriter.dll</HintPath>
@@ -1154,20 +1166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\eshopBE\eshopBE.csproj">
-      <Project>{a34bb306-9c16-4dae-be9d-4672b7343435}</Project>
-      <Name>eshopBE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\eshopBL\eshopBL.csproj">
-      <Project>{c3f16a60-cdf2-4906-8485-f13e2ce1082d}</Project>
-      <Name>eshopBL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\eshopUtilities\eshopUtilities.csproj">
-      <Project>{046a463c-401e-437a-aed0-deb506886c0c}</Project>
-      <Name>eshopUtilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
